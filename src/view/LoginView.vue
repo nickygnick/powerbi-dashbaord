@@ -77,7 +77,6 @@ const login = () => {
   authStore
     .login(form.value.account, form.value.password)
     .then(() => {
-      debugger;
       router.push({ name: "home" });
     })
     .catch((error) => {

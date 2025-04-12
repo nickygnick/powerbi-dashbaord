@@ -1,5 +1,5 @@
 import { createMemoryHistory, createRouter } from "vue-router";
-import { authMiddleware } from "@/middlewares/auth";
+import { authMiddleware } from "@/middlewares/authMiddleware";
 import HomeView from "@/view/HomeView.vue";
 import LoginView from "@/view/LoginView.vue";
 
