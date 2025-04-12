@@ -18,13 +18,14 @@ export const apiGetToken = async (userName, password) => {
   }
 };
 
-export const apiGetInfo = async (account, password) => {
+export const apiGetInfo = async (authToken) => {
   try {
     const response = await axiosInstance.get(
       "/api/2b/bff-sales-line/auth/users/queryUserInfo",
       {
-        account,
-        password,
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       },
     );
     return response.data;
