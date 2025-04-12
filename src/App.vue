@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <div></div>
+  <div>
+    <router-view :key="$route.name"></router-view>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

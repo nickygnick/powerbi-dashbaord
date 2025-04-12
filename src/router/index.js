@@ -1,7 +1,10 @@
 import { createMemoryHistory, createRouter } from "vue-router";
-import LoginView from "../view/LoginView.vue";
+import LoginView from "@/view/LoginView.vue";
 
-const routes = [{ path: "/", name: "home", component: LoginView }];
+const routes = [
+  { path: "/", redirect: "/login" },
+  { name: "login", path: "/login", component: LoginView },
+];
 
 const router = createRouter({
   history: createMemoryHistory(),
