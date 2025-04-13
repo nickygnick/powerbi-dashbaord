@@ -7,8 +7,8 @@
           {{ selectedItem.title }}
         </h2>
 
-        <div>
-          <iframe class="h-full w-full" :src="selectedItem.link"></iframe>
+        <div v-if="link">
+          <iframe class="h-full w-full" :src="link"></iframe>
         </div>
       </div>
       <div
@@ -22,12 +22,22 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import SideMenu from "@/components/SideMenu.vue";
 import { useSideMenuItems } from "@/composables/sideMenuItems";
+import { useAuthStore } from "@/stores/authStore";
 
+const authStore = useAuthStore();
 const { sideMenuItems } = useSideMenuItems();
+
 const selectedItem = ref(sideMenuItems.value[0]);
+
+const link = computed(() => {
+  return selectedItem.value.link.replace(
+    "{{code}}",
+    authStore.userInfo.ownerCode,
+  );
+});
 </script>
 
 <style lang="scss" scoped></style>
