@@ -58,8 +58,8 @@ const router = useRouter();
 const authStore = useAuthStore();
 
 const form = ref({
-  account: "nickchen",
-  password: "Aa1234567",
+  account: "",
+  password: "",
 });
 const submitted = ref(false);
 const loginFailed = ref(false);
