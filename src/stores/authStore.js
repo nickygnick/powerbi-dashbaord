@@ -9,6 +9,7 @@ export const useAuthStore = defineStore("auth", () => {
   const userInfo = ref({});
 
   const roleList = computed(() => {
+    if (!userInfo.value.loginCurrentInfo) return [];
     return [
       ...userInfo.value.loginCurrentInfo?.roleList,
       { roleName: "售服主管" },
@@ -52,10 +53,8 @@ export const useAuthStore = defineStore("auth", () => {
 
       userInfo.value = response.data;
     } catch (err) {
-      if (err.response && err.response.status === 401) {
-        resetToken();
-        router.push({ name: "login" });
-      }
+      resetToken();
+      router.push({ name: "login" });
     }
   };
 

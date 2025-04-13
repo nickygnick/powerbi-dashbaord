@@ -4,7 +4,12 @@ export const authMiddleware = async (to) => {
   const authStore = useAuthStore();
 
   if (!authStore.userInfo.ownerCode) {
-    await authStore.getInfo();
+    try {
+      await authStore.getInfo();
+    } catch (err) {
+      authStore.resetToken();
+      return { name: "login" };
+    }
     return;
   }
 };
