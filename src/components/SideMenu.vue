@@ -65,13 +65,8 @@ import { useAuthStore } from "@/stores/authStore";
 const authStore = useAuthStore();
 const { sideMenuItems } = useSideMenuItems();
 
-const mainCategory = ref("");
-const selectedItem = ref({
-  id: null,
-  title: "",
-  parent: "",
-  roleList: [],
-});
+const mainCategory = ref("首頁");
+const selectedItem = ref(sideMenuItems.value[0]);
 
 const filteredMenuItems = computed(() => {
   return sideMenuItems.value.filter((item) =>
