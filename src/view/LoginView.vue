@@ -10,23 +10,23 @@
         <label class="mb-2 block text-sm font-bold text-gray-700"
           >帳號<span class="text-red-waring">*</span></label
         >
-        <BaseInput
-          class="mb-2"
+        <input
+          class="mb-2 h-11 w-full rounded-[4px] border-1 border-gray-400 p-3 font-normal"
           v-model="form.account"
-          type="secondary"
+          type="text"
           @keyup.enter="login"
-        ></BaseInput>
+        />
       </div>
       <div>
         <label class="mb-2 block text-sm font-bold text-gray-700"
           >密碼<span class="text-red-waring">*</span></label
         >
-        <BaseInput
-          class="mb-2"
+        <input
+          class="mb-2 h-11 w-full rounded-[4px] border-1 border-gray-400 p-3 font-normal"
           v-model="form.password"
-          type="secondary"
+          type="password"
           @keyup.enter="login"
-        ></BaseInput>
+        />
       </div>
       <div class="mt-11">
         <button
@@ -51,7 +51,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
-import BaseInput from "@/components/BaseInput.vue";
 import { useAuthStore } from "../stores/authStore";
 
 const router = useRouter();
