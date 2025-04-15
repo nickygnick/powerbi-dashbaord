@@ -3,6 +3,25 @@ import { ref } from "vue";
 export const useSideMenuItems = () => {
   const sideMenuItems = ref([
     {
+      id: 0,
+      title: "首頁",
+      parent: "首頁",
+      roleList: [
+        "售服主管",
+        "服務廠主管",
+        "接待主管",
+        "服務顧問",
+        "零件主管",
+        "零件人員",
+        "技術主管",
+        "技師",
+        "財務",
+        "保險專員",
+        "索賠員",
+      ],
+      link: "",
+    },
+    {
       id: 1,
       title: "會計相關-應收帳款明細表",
       parent: "會計相關",
