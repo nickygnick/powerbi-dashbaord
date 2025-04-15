@@ -2,12 +2,12 @@
   <div class="flex">
     <SideMenu @change="(item) => (selectedItem = item)" />
     <main class="flex-1 p-6">
-      <div v-if="selectedItem">
+      <div v-if="selectedItem" class="h-screen">
         <h2 class="mb-4 text-xl font-semibold">
           {{ selectedItem.title }}
         </h2>
 
-        <div v-if="link">
+        <div v-if="link" class="h-full">
           <iframe class="h-full w-full" :src="link"></iframe>
         </div>
       </div>
