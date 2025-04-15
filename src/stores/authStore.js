@@ -10,10 +10,7 @@ export const useAuthStore = defineStore("auth", () => {
 
   const roleList = computed(() => {
     if (!userInfo.value.loginCurrentInfo) return [];
-    return [
-      ...userInfo.value.loginCurrentInfo?.roleList,
-      { roleName: "售服主管" },
-    ];
+    return userInfo.value.loginCurrentInfo?.roleList;
   });
 
   const setToken = (token) => {
