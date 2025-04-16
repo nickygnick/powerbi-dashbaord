@@ -4,7 +4,12 @@
   >
     <div class="mb-8 px-4 pt-4 text-xl">
       Hi, {{ userInfo.employeeName || "" }}
+      <!-- 切換帳號按鈕 -->
+      <button class="switch-account" @click="switchAccount">切換帳號</button>
     </div>
+ 
+      
+
     <ul class="m-0 list-none p-0" v-if="mainCategoryMenuItems.length > 0">
       <li
         class="border-b border-gray-200 transition-colors duration-200"
@@ -58,10 +63,7 @@
     >
       沒有權限
     </div>
-    <div class="button-container">
-      <!-- 切換帳號按鈕 -->
-      <button class="switch-button" @click="switchAccount">切換帳號</button>
-    </div>
+   
   </div>
 </template>
 
@@ -101,6 +103,8 @@ const subMenuItems = computed(() => {
 const hasRole = (roleName) => {
   if (!authStore.roleList || authStore.roleList.length === 0) {
     return false;
+  }else if (authStore.roleList.some((role) => role.roleName == null)) {
+    return false;
   }
 
   return authStore.roleList.some((role) => role.roleName.includes(roleName));
@@ -119,26 +123,19 @@ const switchAccount = () => {
 </script>
 
 <style scoped>
-/* 容器樣式，讓按鈕置中 */
-.button-container {
-  display: flex; /* 使用 Flexbox */
-  justify-content: center; /* 水平置中 */
-  align-items: center; /* 垂直置中 */
-}
-
-/* 按鈕樣式 */
-.switch-button {
-  cursor: pointer;
-  margin-top: 20px; /* 上方間距 */
-  border: none;
-  border-radius: 5px;
-  background-color: #0084ff;
-  padding: 10px 20px;
+.switch-account {
+  background-color: #007bff;
   color: white;
-  font-size: 16px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.switch-button:hover {
-  background-color: #45a049;
+.switch-account:hover {
+  background-color: #0056b3;
 }
+
 </style>
