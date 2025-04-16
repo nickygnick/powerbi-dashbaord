@@ -45,6 +45,12 @@ export const useAuthStore = defineStore("auth", () => {
     authToken.value = token;
   };
 
+  const logout = () => {
+    resetToken();
+    userInfo.value = {};
+    router.push({ name: "login" });
+  };
+
   const getInfo = async () => {
     try {
       const response = await apiGetInfo(getToken());
@@ -62,6 +68,7 @@ export const useAuthStore = defineStore("auth", () => {
     userInfo,
     roleList,
     login,
+    logout,
     getInfo,
   };
 });

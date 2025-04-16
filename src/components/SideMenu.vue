@@ -2,6 +2,9 @@
   <div
     class="h-screen w-72 overflow-y-auto border-r border-gray-200 bg-gray-50"
   >
+    <div class="mb-8 px-4 pt-4 text-xl">
+      Hi, {{ userInfo.employeeName || "" }}
+    </div>
     <ul class="m-0 list-none p-0" v-if="mainCategoryMenuItems.length > 0">
       <li
         class="border-b border-gray-200 transition-colors duration-200"
@@ -56,23 +59,22 @@
       沒有權限
     </div>
     <div class="button-container">
-    <!-- 切換帳號按鈕 -->
-    <button @click="switchAccount" class="switch-button">
-      切換帳號
-    </button>
-  </div>
+      <!-- 切換帳號按鈕 -->
+      <button class="switch-button" @click="switchAccount">切換帳號</button>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
 import { useSideMenuItems } from "@/composables/sideMenuItems";
 import { useAuthStore } from "@/stores/authStore";
-import { useRouter } from "vue-router";
 
-const router = useRouter();
 const authStore = useAuthStore();
 const { sideMenuItems } = useSideMenuItems();
+
+const { userInfo } = storeToRefs(authStore);
 
 const mainCategory = ref("首頁");
 const selectedItem = ref(sideMenuItems.value[0]);
@@ -112,9 +114,8 @@ const selectItem = (item) => {
 };
 
 const switchAccount = () => {
-  router.push({ name: "login" });
+  authStore.logout();
 };
-
 </script>
 
 <style scoped>
@@ -127,14 +128,14 @@ const switchAccount = () => {
 
 /* 按鈕樣式 */
 .switch-button {
-  background-color: #0084ff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
   cursor: pointer;
   margin-top: 20px; /* 上方間距 */
+  border: none;
+  border-radius: 5px;
+  background-color: #0084ff;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
 }
 
 .switch-button:hover {
