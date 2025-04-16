@@ -33,10 +33,14 @@ const { sideMenuItems } = useSideMenuItems();
 const selectedItem = ref(sideMenuItems.value[0]);
 
 const link = computed(() => {
+
+  //如果部門為VCTL就不代參數
+  if (authStore.userInfo.ownerCode === "VOLVO") {
+    return selectedItem.value.link.replace(
+      "{{code}}","",);
+  }
   return selectedItem.value.link.replace(
-    "{{code}}",
-    authStore.userInfo.ownerCode,
-  );
+    "{{code}}","'"+authStore.userInfo.ownerCode+"'",);
 });
 </script>
 
