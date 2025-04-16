@@ -40,7 +40,7 @@
     </div>
     <div v-else>
       <div class="mb-3 text-center text-lg">登入失敗</div>
-      <div class="text-sm text-gray-700">登入出現問題，請洽管理員</div>
+      <div class="text-sm text-gray-700">{{ errorMessage || "登入出現問題，請洽管理員" }}</div>
       <div class="mt-20">
         <button class="button-blue w-full" @click="handleReset">返回</button>
       </div>
@@ -62,6 +62,7 @@ const form = ref({
 });
 const submitted = ref(false);
 const loginFailed = ref(false);
+const errorMessage = ref("");
 
 const buttonDisabled = computed(() => {
   return form.value.account === "" || form.value.password === "";
@@ -80,6 +81,7 @@ const login = () => {
     })
     .catch((error) => {
       console.error(error);
+      errorMessage.value = error.message;
       loginFailed.value = true;
     });
 };
@@ -89,6 +91,7 @@ const handleReset = () => {
   form.value.account = "";
   form.value.password = "";
   loginFailed.value = false;
+  errorMessage.value = "";
 };
 </script>
 

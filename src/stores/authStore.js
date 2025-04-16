@@ -36,7 +36,9 @@ export const useAuthStore = defineStore("auth", () => {
   const login = async (userName, password) => {
     const response = await apiGetToken(userName, password);
 
-    if (!response.success) return;
+    if (!response.success) {
+      throw new Error(response.errMsg);
+    }
 
     const token = response.data;
     setToken(token);
