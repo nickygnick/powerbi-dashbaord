@@ -48,12 +48,19 @@
         </transition>
       </li>
     </ul>
+
     <div
       class="flex h-full items-center justify-center text-2xl text-gray-500"
       v-else
     >
       沒有權限
     </div>
+    <div class="button-container">
+    <!-- 切換帳號按鈕 -->
+    <button @click="switchAccount" class="switch-button">
+      切換帳號
+    </button>
+  </div>
   </div>
 </template>
 
@@ -102,3 +109,28 @@ const selectItem = (item) => {
   emit("change", item);
 };
 </script>
+
+<style scoped>
+/* 容器樣式，讓按鈕置中 */
+.button-container {
+  display: flex; /* 使用 Flexbox */
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+}
+
+/* 按鈕樣式 */
+.switch-button {
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* 上方間距 */
+}
+
+.switch-button:hover {
+  background-color: #45a049;
+}
+</style>
