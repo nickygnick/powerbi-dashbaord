@@ -92,7 +92,7 @@ const hasRole = (roleName) => {
     return false;
   }
 
-  return authStore.roleList.some((role) => role.roleName === roleName);
+  return authStore.roleList.some((role) => role.roleName.includes(roleName));
 };
 
 const emit = defineEmits(["change"]);
