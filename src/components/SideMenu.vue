@@ -68,7 +68,9 @@
 import { computed, ref } from "vue";
 import { useSideMenuItems } from "@/composables/sideMenuItems";
 import { useAuthStore } from "@/stores/authStore";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const authStore = useAuthStore();
 const { sideMenuItems } = useSideMenuItems();
 
@@ -108,6 +110,11 @@ const selectItem = (item) => {
   selectedItem.value = item;
   emit("change", item);
 };
+
+const switchAccount = () => {
+  router.push({ name: "login" });
+};
+
 </script>
 
 <style scoped>
