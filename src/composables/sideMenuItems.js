@@ -55,7 +55,7 @@ export const useSideMenuItems = () => {
       title: "零件相關-出貨成本查詢",
       parent: "零件相關",
       roleList: ["帳號(總管理者)","售服部門主管(總監)","集團(跨廠權限)售服主管","售服主管", "服務廠主管","據點主管", "零件主管","(零件)主管", "零件人員"],
-      link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=30a8c840a0ee740e9a3e&filter=parts_costs/dealer_id eq {{code}}"
+      link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=30a8c840a0ee740e9a3e&filter=part_sales_master/dealer_id eq {{code}}"
     },
     {
       id: 5,
