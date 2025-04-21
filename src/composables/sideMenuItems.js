@@ -123,7 +123,7 @@ export const useSideMenuItems = () => {
       id: 14,
       title: "VCTL",
       parent: "總管理報表",
-      roleList: ["帳號(總管理者)","售服部門主管(總監)","集團(跨廠權限)售服主管","售服主管"],
+      roleList: ["帳號(總管理者)","售服部門主管(總監)"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f"
     },
   ]);
