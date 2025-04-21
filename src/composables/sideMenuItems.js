@@ -121,10 +121,49 @@ export const useSideMenuItems = () => {
       link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=cbb27f790e6aad4d5abb&filter=warranty_master/dealer_id eq {{code}}"
     },{
       id: 14,
-      title: "VCTL",
-      parent: "總管理報表",
+      title: "回廠率大表",
+      parent: "總管理報表-經營相關",
       roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
-      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f"
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=465a4f99554863911ac1"
+    },
+    ,{
+      id: 15,
+      title: "OP Code查進廠車數",
+      parent: "總管理報表-經營相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=107bd46af89f4d993ce0"
+    },{
+      id: 16,
+      title: "回廠車籍表",
+      parent: "總管理報表-經營相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=e71ab409797476166c55"
+    },
+    ,{
+      id: 17,
+      title: "久未回廠車籍表",
+      parent: "總管理報表-經營相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=132fda7d531352d39cdd"
+    },{
+      id: 18,
+      title: "經銷商庫存成本",
+      parent: "總管理報表-零件相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=e50ee0e406162b131441"
+    },
+    ,{
+      id: 19,
+      title: "出貨成本查詢",
+      parent: "總管理報表-零件相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=30a8c840a0ee740e9a3e"
+    },{
+      id: 20,
+      title: "零配件銷售明細表",
+      parent: "總管理報表-零件相關",
+      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=0b81eacee030bb750701"
     },
   ]);
   return { sideMenuItems };
