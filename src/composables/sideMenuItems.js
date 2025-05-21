@@ -192,18 +192,25 @@ export const useSideMenuItems = () => {
     },
     {
       id: 24,
+      title: "Paycode零配件銷售成本",
+      parent: "總管理報表-零件相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=034ac7a9607a0a0099a9"
+    },
+    {
+      id: 25,
       title: "板金烤漆營業額",
       parent: "總管理報表-維修相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=6b659b5ae430b398e69a"
     },
     {
-      id: 25,
+      id: 26,
       title: "預約作業進廠分析",
       parent: "總管理報表-維修相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=735cc791827010a50d79"
-    },
+    },  
   ]);
   return { sideMenuItems };
 };
