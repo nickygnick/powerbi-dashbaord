@@ -171,41 +171,76 @@ export const useSideMenuItems = () => {
     },
     {
       id: 21,
+      title: "KPI進廠車數統計",
+      parent: "總管理報表-經營相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=095804c07c13ca6d1eb4"
+    },
+    {
+      id: 22,
+      title: "維修收入車齡及Paycode",
+      parent: "總管理報表-經營相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=a498cb481ea09c5ead99"
+    },
+    {
+      id: 23,
+      title: "經銷商KPI",
+      parent: "總管理報表-經營相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=219d4b6b39890ffc594c"
+    },
+    {
+      id: 24,
       title: "經銷商庫存成本",
       parent: "總管理報表-零件相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=e50ee0e406162b131441"
     },
     {
-      id: 22,
+      id: 25,
       title: "出貨成本查詢",
       parent: "總管理報表-零件相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=30a8c840a0ee740e9a3e"
     },
     {
-      id: 23,
+      id: 26,
       title: "零配件銷售明細表",
       parent: "總管理報表-零件相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=0b81eacee030bb750701"
     },
     {
-      id: 24,
+      id: 27,
+      title: "服務廠營運分析",
+      parent: "總管理報表-零件相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=95a8a909d4204d03fc60"
+    },
+    {
+      id: 28,
+      title: "Polestar年度銷售",
+      parent: "總管理報表-零件相關",
+      roleList: ["售服部門主管(總監)","廠端運維管理員"],
+      link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=f44dc90413ea13334e97"
+    },
+    {
+      id: 29,
       title: "Paycode零配件銷售成本",
       parent: "總管理報表-零件相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=034ac7a9607a0a0099a9"
     },
     {
-      id: 25,
+      id: 30,
       title: "板金烤漆營業額",
       parent: "總管理報表-維修相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=6b659b5ae430b398e69a"
     },
     {
-      id: 26,
+      id: 31,
       title: "預約作業進廠分析",
       parent: "總管理報表-維修相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
