@@ -121,13 +121,6 @@ export const useSideMenuItems = () => {
       link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=e71ab409797476166c55&filter=work_master/dealer_id eq {{code}}"
     },    
     {
-      id: 14,
-      title: "維修相關-工單維修明細表(歷史)",
-      parent: "維修相關",
-      roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管","售服主管", "服務廠主管","據點主管", "技術主管","(技術)主管"],
-      link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=18222bc8aeab5c84c4df&filter=work_master_his/dealer_id eq {{code}}"
-    },
-    {
       id: 15,
       title: "維修相關-重修明細表",
       parent: "維修相關",
