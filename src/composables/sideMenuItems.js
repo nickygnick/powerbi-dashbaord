@@ -269,7 +269,7 @@ export const useSideMenuItems = () => {
     },
     {
       id: 36,
-      title: "板金烤漆營業額",
+      title: "鈑金烤漆營業額",
       parent: "總管理報表-維修相關",
       roleList: ["售服部門主管(總監)","廠端運維管理員"],
       link: "https://app.powerbi.com/reportEmbed?reportId=5e3cf6ee-54df-42e8-ba09-fda9c56a1c7f&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=6b659b5ae430b398e69a"

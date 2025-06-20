@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-screen w-72 overflow-y-auto border-r border-gray-200 bg-gray-50"
+    class="h-screen w-52 overflow-y-auto border-r border-gray-200 bg-gray-50"
   >
     <div class="mb-8 px-4 pt-4 text-xl">
       Hi, {{ userInfo.employeeName || "" }}
