@@ -36,11 +36,19 @@ const link = computed(() => {
 
   //如果部門為VCTL就不代參數
   if (authStore.userInfo.ownerCode === "VOLVO") {
+    //判斷orgType等於15061008
+    if (authStore.userInfo.orgType === "15061008") {
+          return selectedItem.value.link.replace(
+            //需要調整dealer_id_gen的參數
+            "{{code}}","dealer_id_gen '"+authStore.userInfo.ownerCode+"'",);
+            //且需要把左邊選單總管理報表都隱藏
+        }
+    //判斷orgType不等於15061008
     return selectedItem.value.link.replace(
       "{{code}}","",);
   }
   return selectedItem.value.link.replace(
-    "{{code}}","'"+authStore.userInfo.ownerCode+"'",);
+    "{{code}}","dealer_id eq '"+authStore.userInfo.ownerCode+"'",);
 });
 </script>
 
