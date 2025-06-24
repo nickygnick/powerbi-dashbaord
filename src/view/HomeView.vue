@@ -40,7 +40,7 @@ const link = computed(() => {
       return selectedItem.value.link.replace(
         //需要調整dealer_id_gen的參數
         "{{code}}",
-        `dealer_id_gen '${authStore.userInfo.reportCode}'`,
+        `dealer_id_gen eq '${authStore.userInfo.reportCode}'`,
       );
       //且需要把左邊選單總管理報表都隱藏
     }
