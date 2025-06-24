@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import { apiGetToken, apiGetInfo } from "@/api/authApi";
+import { apiGetToken, apiGetInfo, apiGetCompanyInfo } from "@/api/authApi";
 
 export const useAuthStore = defineStore("auth", () => {
   const router = useRouter();
@@ -9,8 +9,15 @@ export const useAuthStore = defineStore("auth", () => {
   const userInfo = ref({});
 
   const roleList = computed(() => {
-    if (!userInfo.value.loginCurrentInfo) return [];
-    return userInfo.value.loginCurrentInfo?.roleList;
+    if (
+      !userInfo.value.loginCurrentInfo?.roleList ||
+      userInfo.value.loginCurrentInfo?.roleList.length === 0
+    ) {
+      return [];
+    }
+    return userInfo.value.loginCurrentInfo?.roleList.filter(
+      (item) => item.roleName,
+    );
   });
 
   const setToken = (token) => {
@@ -57,9 +64,35 @@ export const useAuthStore = defineStore("auth", () => {
       if (!response.success) return;
 
       userInfo.value = response.data;
+      userInfo.value.reportCode = userInfo.value.ownerCode;
+
+      if (userInfo.value.loginCurrentInfo.orgType == "15061008") {
+        const companyInfo = await getCompanyInfo();
+        if (companyInfo && companyInfo.length > 0) {
+          const code = companyInfo[0].companyCode.substring(0, 2);
+          userInfo.value.reportCode = code;
+        }
+      }
     } catch (err) {
       resetToken();
       router.push({ name: "login" });
+    }
+  };
+
+  const getCompanyInfo = async () => {
+    try {
+      const response = await apiGetCompanyInfo(
+        getToken(),
+        userInfo.value.loginCurrentInfo.orgId,
+      );
+      if (response.resultCode != "200") {
+        alert(response.errMsg);
+        return;
+      }
+
+      return response.data;
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -70,5 +103,6 @@ export const useAuthStore = defineStore("auth", () => {
     login,
     logout,
     getInfo,
+    getCompanyInfo,
   };
 });

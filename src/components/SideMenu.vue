@@ -7,8 +7,6 @@
       <!-- 切換帳號按鈕 -->
       <button class="switch-account" @click="switchAccount">切換帳號</button>
     </div>
- 
-      
 
     <ul class="m-0 list-none p-0" v-if="mainCategoryMenuItems.length > 0">
       <li
@@ -63,7 +61,6 @@
     >
       沒有權限
     </div>
-   
   </div>
 </template>
 
@@ -82,9 +79,14 @@ const mainCategory = ref("首頁");
 const selectedItem = ref(sideMenuItems.value[0]);
 
 const filteredMenuItems = computed(() => {
-  return sideMenuItems.value.filter((item) =>
-    item.roleList.some((roleName) => hasRole(roleName)),
-  );
+  return sideMenuItems.value
+    .filter((item) => {
+      if (userInfo.value.loginCurrentInfo.orgType == "15061008") {
+        return !item.parent.includes("總管理報表");
+      }
+      return true;
+    })
+    .filter((item) => item.roleList.some((roleName) => hasRole(roleName)));
 });
 
 const mainCategoryMenuItems = computed(() => {
@@ -102,8 +104,6 @@ const subMenuItems = computed(() => {
 // 檢查用戶是否有特定角色權限
 const hasRole = (roleName) => {
   if (!authStore.roleList || authStore.roleList.length === 0) {
-    return false;
-  }else if (authStore.roleList.some((role) => role.roleName == null)) {
     return false;
   }
 
@@ -124,18 +124,17 @@ const switchAccount = () => {
 
 <style scoped>
 .switch-account {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 3px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  padding: 5px 10px;
+  color: white;
+  font-size: 12px;
 }
 
 .switch-account:hover {
   background-color: #0056b3;
 }
-
 </style>

@@ -33,3 +33,19 @@ export const apiGetInfo = async (authToken) => {
     throw error;
   }
 };
+
+export const apiGetCompanyInfo = async (authToken, companyCode) => {
+  try {
+    const response = await axiosInstance.get(
+      `/openapi/bff-aftersales-line/org/company/selectCompanyInfoReport?orgId=${companyCode}`,
+      {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
