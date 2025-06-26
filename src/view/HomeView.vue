@@ -2,12 +2,12 @@
   <div class="flex">
     <SideMenu @change="(item) => (selectedItem = item)" />
     <main class="flex-1 p-6">
-      <div v-if="selectedItem" class="h-screen">
+      <div class="h-screen" v-if="selectedItem">
         <h2 class="mb-4 text-xl font-semibold">
           {{ selectedItem.title }}
         </h2>
 
-        <div v-if="link" class="h-full">
+        <div class="h-full" v-if="link">
           <iframe class="h-full w-full" :src="link"></iframe>
         </div>
       </div>
@@ -33,22 +33,24 @@ const { sideMenuItems } = useSideMenuItems();
 const selectedItem = ref(sideMenuItems.value[0]);
 
 const link = computed(() => {
-
-  //如果部門為VCTL就不代 參數
+  //如果部門為VCTL就不代參數
   if (authStore.userInfo.ownerCode === "VOLVO") {
     //判斷orgType等於15061008
-    if (authStore.userInfo.orgType === "15061008") {
-          return selectedItem.value.link.replace(
-            //需要調整dealer_id_gen的參數
-            "{{code}}","dealer_id_gen '"+authStore.userInfo.ownerCode+"'",);
-            //且需要把左邊選單總管理報表都隱藏
-        }
+    if (authStore.userInfo.loginCurrentInfo.orgType == "15061008") {
+      return selectedItem.value.link.replace(
+        //需要調整dealer_id_gen的參數
+        "{{code}}",
+        `dealer_id_gen eq '${authStore.userInfo.reportCode}'`,
+      );
+      //且需要把左邊選單總管理報表都隱藏
+    }
     //判斷orgType不等於15061008
-    return selectedItem.value.link.replace(
-      "{{code}}","",);
+    return selectedItem.value.link.replace("{{code}}", "");
   }
   return selectedItem.value.link.replace(
-    "{{code}}","dealer_id eq '"+authStore.userInfo.ownerCode+"'",);
+    "{{code}}",
+    `dealer_id eq '${authStore.userInfo.reportCode}'`,
+  );
 });
 </script>
 
