@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://dmsuatapi.volvocartw.com",
+        target: "https://dmsapi.volvocartw.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
