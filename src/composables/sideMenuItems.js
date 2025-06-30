@@ -34,7 +34,7 @@ export const useSideMenuItems = () => {
       title: "會計相關-應收帳款明細表",
       parent: "會計相關",
       roleList: ["帳號(總管理者)","售服部門主管(總監)","廠端運維管理員","集團(跨廠權限)售服主管","售服主管", "服務廠主管","據點主管", "財務","財務會計"],
-      link: "https://app.powerbi.com/reportEmbed?reportId=d0a56937-4a6b-4082-b021-c9a491c9ae78&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=52986780cd9db57b5cdb&filter=pub_pay/{{code}}"
+      link: "https://app.powerbi.com/reportEmbed?reportId=4b273743-f7e6-4f44-9066-22899833e159&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f&pageName=52986780cd9db57b5cdb&filter=pub_pay/{{code}}"
     },
     {
       id: 2,
